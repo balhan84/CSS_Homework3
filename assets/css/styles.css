@@ -1,10 +1,15 @@
 * {
   box-sizing: border-box;
 }
+html {
+  overflow-x: hidden;
+}
 
 body {
-  font-family: sans-serif;
+  font-family: Inter, sans-serif;
   padding: 20px;
+  position: relative;
+  overflow-x: hidden;
 }
 
 .menu-nav {
@@ -40,12 +45,14 @@ body {
   color: #35414b;
   text-decoration: none;
   padding: 5px 10px;
+  flex-shrink: 0;
 }
 
 .link-login {
   text-decoration: none;
   position: absolute;
   right: 200px;
+  flex-shrink: 0;
 }
 
 .btn-menu-nav {
@@ -157,7 +164,7 @@ body {
   align-items: center;
 }
 
-/* .menu-nav::before {
+body::before {
   content: "";
   width: 2000px;
   min-height: 2000px;
@@ -165,8 +172,10 @@ body {
   border: 1px solid #f0ebfa;
   background-color: rgb(251, 250, 254, 0.3);
   position: absolute;
+  top: -40vw;
+  left: -3vw;
   z-index: -1;
-} */
+}
 
 .section-info {
   color: #35414b;
@@ -181,10 +190,10 @@ body {
 
 .section-grid {
   display: grid;
-  grid-template-columns: repeat(3, 300px);
-  grid-template-rows: repeat(2, 200px);
-  row-gap: 80px;
-  column-gap: 100px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  row-gap: 5vw;
+  column-gap: 10vw;
   justify-content: center;
 }
 
@@ -247,6 +256,7 @@ body {
     width: 100%;
     flex-direction: column;
     text-align: center;
+    background-color: #81c43b;
   }
 
   .link-login {
